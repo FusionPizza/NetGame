@@ -73,3 +73,10 @@ Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+NetGame/Content/Geometry/
+NetGame/Content/Mannequin/
+NetGame/Content/StarterContent/
+NetGame/Content/ThirdPerson/Meshes/
+NetGame/Intermediate/
+NetGame/Saved/
+*.pdb
