@@ -22,6 +22,12 @@ void UNetGameInstance::Host()
 	if (!ensure(Engine != nullptr)) return;
 
 	Engine->AddOnScreenDebugMessage(0, 4, FColor::Purple, TEXT("HOSTING"));
+
+
+	UWorld* World = GetWorld();
+	if (!ensure(World != nullptr)) return;
+
+	World->ServerTravel("/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap?listen");
 }
 
 void UNetGameInstance::Join(const FString& Address)
