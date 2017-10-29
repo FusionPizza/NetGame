@@ -53,3 +53,15 @@ void UNetGameInstance::Join(const FString& Address)
 
 	PlayerController->ClientTravel(Address, ETravelType::TRAVEL_Absolute);
 }
+
+void UNetGameInstance::LoadMenu()
+{
+	if (!ensure(MenuClass != nullptr)) return;
+	
+	UUserWidget* Menu = CreateWidget<UUserWidget>(this, MenuClass);
+	
+	if (!ensure(Menu != nullptr)) return;
+
+	Menu->AddToViewport();
+
+}
