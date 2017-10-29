@@ -21,10 +21,20 @@ bool UMainMenu::Initialize()
 	return true;
 }
 
+void UMainMenu::SetMenuInterface(IMenuInterface* MenuInterface)
+{
+
+	this->MenuInterface = MenuInterface;
+}
+
  void UMainMenu::HostServer()
 {
  
-	 UE_LOG(LogTemp, Warning, TEXT("One Server Coming Up Fresh!"));
+	 if (MenuInterface != nullptr)
+	 {
+		 MenuInterface->Host();
+		 
+	 }
  
 }
 

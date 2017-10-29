@@ -7,6 +7,8 @@
 #include "Blueprint/UserWidget.h"
 #include "PlatformTrigger.h"
 
+#include "MenuSystem/MainMenu.h"
+
 
 
 UNetGameInstance::UNetGameInstance(const FObjectInitializer & ObjectInitializer) 
@@ -58,7 +60,7 @@ void UNetGameInstance::LoadMenu()
 {
 	if (!ensure(MenuClass != nullptr)) return;
 	
-	UUserWidget* Menu = CreateWidget<UUserWidget>(this, MenuClass);
+	UMainMenu* Menu = CreateWidget<UMainMenu>(this, MenuClass);
 	
 	if (!ensure(Menu != nullptr)) return;
 
@@ -74,4 +76,6 @@ void UNetGameInstance::LoadMenu()
 	PlayerController->SetInputMode(InputModeData);
 
 	PlayerController->bShowMouseCursor = true;
+
+	Menu->SetMenuInterface(this);
 }

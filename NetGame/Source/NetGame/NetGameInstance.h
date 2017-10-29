@@ -4,13 +4,14 @@
 
 #include "CoreMinimal.h"
 #include "Engine/GameInstance.h"
+#include "MenuSystem/MenuInterface.h"
 #include "NetGameInstance.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class NETGAME_API UNetGameInstance : public UGameInstance
+class NETGAME_API UNetGameInstance : public UGameInstance, public IMenuInterface
 {
 	GENERATED_BODY()
 
