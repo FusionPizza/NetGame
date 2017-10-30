@@ -48,6 +48,9 @@ void UNetGameInstance::Host()
 
 void UNetGameInstance::Join(const FString& Address)
 {
+	if (Menu != nullptr) {
+		Menu->Teardown();
+	}
 	UEngine* Engine = GetEngine();
 	if (!ensure(Engine != nullptr)) return;
 
