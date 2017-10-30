@@ -32,6 +32,8 @@ private:
 	class UButton* Join;
 
 	UPROPERTY(meta = (BindWidget))
+	class UButton* ExitButton;
+	UPROPERTY(meta = (BindWidget))
 	class UWidgetSwitcher* MenuSwitcher;
 
 	UPROPERTY(meta = (BindWidget))
@@ -62,7 +64,9 @@ private:
 
 	UFUNCTION()
 	void OpenMainMenu();
-
+	
+	UFUNCTION()
+	void ExitPressed();
 
 	
 };
